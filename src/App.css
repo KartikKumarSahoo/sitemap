@@ -1,33 +1,115 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+  max-width: 100vw;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  font-size: 20px;
+  padding: 30px;
+}
+
+main {
+  padding: 0 30px;
+}
+
+.heading {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px dashed #ccc;
+  color: #2c2f42;
+}
+
+.ordered-list {
+  margin-bottom: 30px;
+}
+
+.list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  /* justify-content: space-around; */
 }
 
-.App-link {
-  color: #61dafb;
+.list-item {
+  flex: 50%;
+  padding: 0 10px 10px;
+  line-height: 1.33;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 768px){
+  .list-item {
+    flex: 33%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (min-width: 992px){
+  .list-item {
+    flex: 25%;
+  }
+}
+
+.sorted-list .heading {
+  border: none;
+  padding: 0;
+}
+
+.sticky.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  background: white;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  margin-top: 5px;
+  border-bottom: 1px dashed #ccc;
+  border-top: 1px dashed #ccc;
+}
+
+@media (min-width: 992px){
+  .sticky.wrapper {
+    justify-content: space-evenly;
+  }
+}
+
+.nav-link {
+  font-weight: 300;
+  opacity: 0.8;
+  min-width: 30px;
+  line-height: 1.3;
+}
+
+.group-wrapper {
+  margin-top: 30px;
+  display: flex;
+}
+
+.group-heading {
+  flex: 20%;
+  font-weight: bold;
+}
+
+.group-list {
+  flex: 80%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.group-list .list-item {
+  flex: 50%;
+  padding-left: 0;
+}
+
+@media (max-width: 767px){
+  .group-wrapper{
+    flex-direction: column;
+  }
+  .group-heading {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px dashed #ccc;
+    flex: unset;
+  }
+  .group-list {
+    flex: unset;
+    display: block;
   }
 }
