@@ -12,18 +12,15 @@ export const groupBy = (arr, fn) =>
       return acc;
     }, {});
 
-export const smoothScroll = element => {
-  const ele = document.querySelector(element);
-  if (ele)
-    ele.scrollIntoView({
-      behavior: 'smooth',
-    });
-};
-
 export const scrollTo = (element, offset = 0) => {
-  const ele = document.querySelector(element);
-  if (!ele) throw new Error('Element not found.');
-  const position = ele.offsetTop;
+  let position = 0;
+  if (element instanceof String) {
+    const ele = document.querySelector(element);
+    if (!ele) throw new Error('Element not found.');
+    position = ele.offsetTop;
+  } else {
+    position = element;
+  }
   let isSmoothScrollSupported =
     'scrollBehavior' in document.documentElement.style;
   if (isSmoothScrollSupported && window.scroll) {

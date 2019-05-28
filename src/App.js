@@ -3,7 +3,7 @@ import './App.css';
 import data from './data';
 import OrderedList from './OrderedList';
 import SortedList from './SortedList';
-import { uniqueElementsBy, groupBy } from './utils';
+import { uniqueElementsBy, groupBy, scrollTo } from './utils';
 
 function groupedItinararies(items) {
   return groupBy(items, item => {
@@ -32,6 +32,13 @@ function App() {
           items={data.itineraries}
           groups={groupedItinararies(data.itineraries)}
         />
+        <button
+          className="goto-top"
+          onClick={() => scrollTo(0)}
+          title="Goto Top"
+        >
+          <span className="arrow">&#8593;</span>
+        </button>
       </main>
     </div>
   );
