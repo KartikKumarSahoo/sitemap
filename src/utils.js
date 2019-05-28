@@ -14,7 +14,7 @@ export const groupBy = (arr, fn) =>
 
 export const scrollTo = (element, offset = 0) => {
   let position = 0;
-  if (element instanceof String) {
+  if (typeof element === 'string') {
     const ele = document.querySelector(element);
     if (!ele) throw new Error('Element not found.');
     position = ele.offsetTop;
