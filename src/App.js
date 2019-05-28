@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Pickyourtrail Sitmap</h1>
+        <h2>Pickyourtrail Sitemap</h2>
       </header>
       <main>
         <OrderedList
